@@ -1,0 +1,43 @@
+/* Game Over Page */
+.game-over-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-image: url('Premium Vector _ human brain shape of an artificial intelligence.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+  
+  /* Game Over Animation */
+  #congrats-message {
+    font-size: 2rem;
+    margin: 20px;
+    animation: fly 2s ease-in-out infinite;
+  }
+  
+  @keyframes fly {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* Game Over Buttons */
+  button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, #444, #888);
+    color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  button:hover {
+    background: linear-gradient(135deg, #666, #aaa);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  }
+  

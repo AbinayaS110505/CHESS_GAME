@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Game</title>
+    <script src="chess.js"></script>
+    <style>
+        /* Body and Container */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image:url(Premium\ Vector\ _\ \ human\ brain\ shape\ of\ an\ artificial\ intelligence_.jpeg);
+            height: 100vh;
+            margin: 0;
+        }
+
+        .chess-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        /* Chessboard */
+        .chessboard {
+            display: grid;
+            grid-template-columns: repeat(8, 80px);
+            grid-template-rows: repeat(8, 80px);
+            border: 2px solid #000;
+        }
+
+        .cell {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px; /* Adjust size for chess pieces */
+            cursor: pointer;
+        }
+
+        .cell.black {
+            background-color: #5e6359;
+            border-color: #eeeed2;
+        }
+
+        .cell.white {
+            background-color: #eeeed2;
+        }
+
+        /* Chess Pieces */
+        .piece {
+            cursor: grab;
+        }
+
+        .piece:active {
+            cursor: grabbing;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chess-container">
+        <h1>Chess Game</h1>
+        <div id="chessboard" class="chessboard"></div>
+    </div>
+
+    <script>
+        // Chessboard initialization
+        const board = document.getElementById('chessboard');
+        const initialSetup = [
+            ["♜", "♞", "♝", "♛", "♚", "♝", "♞", "♜"],
+            ["♟", "♟", "♟", "♟", "♟", "♟", "♟", "♟"],
+            ["", "", "", "", "", "", "", ""],
+            ["", "", "", "", "", "", "", ""],
+            ["", "", "", "", "", "", "", ""],
+            ["", "", "", "", "", "", "", ""],
+            ["♙", "♙", "♙", "♙", "♙", "♙", "♙", "♙"],
+            ["♖", "♘", "♗", "♕", "♔", "♗", "♘", "♖"]
+        ];
+
+        // Generate chessboard cells
+        for (let row = 0; row < 8; row++) {
+            for (let col = 0; col < 8; col++) {
+                const cell = document.createElement('div');
+                cell.classList.add('cell');
+                cell.classList.add((row + col) % 2 === 0 ? 'white' : 'black');
+
+                // Add pieces to the board
+                const piece = initialSetup[row][col];
+                if (piece) {
+                    const pieceElement = document.createElement('span');
+                    pieceElement.textContent = piece;
+                    pieceElement.classList.add('piece');
+                    pieceElement.draggable = true;
+                    cell.appendChild(pieceElement);
+                }
+
+                board.appendChild(cell);
+            }
+        }
+
+        // Drag-and-drop functionality
+        let draggedPiece = null;
+
+        document.addEventListener('dragstart', (e) => {
+            if (e.target.classList.contains('piece')) {
+                draggedPiece = e.target;
+            }
+        });
+
+        document.addEventListener('dragover', (e) => {
+            e.preventDefault(); // Allow dropping
+        });
+
+        document.addEventListener('drop', (e) => {
+            if (e.target.classList.contains('cell') && draggedPiece) {
+                e.target.appendChild(draggedPiece);
+                draggedPiece = null;
+            }
+        });
+    </script>
+
+</body>
+</html>

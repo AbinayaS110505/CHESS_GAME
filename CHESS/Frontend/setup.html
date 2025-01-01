@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Setup</title>
+    <link rel="stylesheet" href="setup.css">
+   
+</head>
+<body>
+
+    <div class="setup-container">
+        <h1>Chess Game Setup</h1>
+
+        <p>Select Game Mode:</p>
+        <button id="player-vs-player" class="mode-btn">Player vs Player</button>
+        <button id="player-vs-computer" class="mode-btn">Player vs Computer</button>
+
+        <div id="color-selection" class="hidden">
+            <label for="player-color">Choose Your Color:</label>
+            <select id="player-color">
+                <option value="white">White</option>
+                <option value="black">Black</option>
+            </select>
+        </div>
+
+        <button id="start-game-btn" class="hidden">Start Game</button>
+    </div>
+
+    <script>
+        const playerVsPlayerBtn = document.getElementById("player-vs-player");
+        const playerVsComputerBtn = document.getElementById("player-vs-computer");
+        const colorSelectionDiv = document.getElementById("color-selection");
+        const startGameBtn = document.getElementById("start-game-btn");
+
+        let gameMode = ""; // Track the selected game mode
+
+        // Highlight the selected game mode
+        function highlightButton(button) {
+            document.querySelectorAll(".mode-btn").forEach(btn => btn.classList.remove("highlight"));
+            button.classList.add("highlight");
+        }
+
+        // Handle Player vs Player selection
+        playerVsPlayerBtn.addEventListener("click", () => {
+            highlightButton(playerVsPlayerBtn);
+            gameMode = "player-vs-player";
+            colorSelectionDiv.classList.add("hidden");
+            startGameBtn.classList.remove("hidden");
+        });
+
+        // Handle Player vs Computer selection
+        playerVsComputerBtn.addEventListener("click", () => {
+            highlightButton(playerVsComputerBtn);
+            gameMode = "player-vs-computer";
+            colorSelectionDiv.classList.remove("hidden");
+            startGameBtn.classList.remove("hidden");
+        });
+
+        // Start Game Button Click
+        startGameBtn.addEventListener("click", () => {
+            let color = "white"; // Default color for Player vs Computer
+            if (gameMode === "player-vs-computer") {
+                color = document.getElementById("player-color").value;
+            }
+            window.location.href = `chess.html?mode=${gameMode}&color=${color}`;
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+/* Ensure the body and html take up full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Main container */
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100%; /* Full screen height */
+    text-align: center;
+    background-image: url('chess_pic5.jpeg'); /* Background image */
+    background-size: cover; /* Cover the screen without distortion */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    color: white; /* White text for better contrast */
+    box-sizing: border-box;
+    position: relative; /* Enable positioning child elements */
+  }
+  
+  /* Move the h1 to the top */
+  h1 {
+    font-size: 35px;
+    margin: 0;
+    padding-top: 45px;
+    position: absolute; /* Allow precise positioning */
+    top: 15px; /* Adjust the distance from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Correct horizontal centering */
+  }
+  
+  /* Paragraph styling */
+  p {
+    margin-bottom: 20px;
+  }
+  
+  /* Button styling */
+  #get-started {
+    padding: 20px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #000000, #ffffff); /* Chessboard-like gradient */
+    color: white;
+    border: 1px solid black; 
+    border-radius: 80px;
+    border-color: black;
+     transition: transform 0.3s ease-in-out, background 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Light effect for button hover */
+  #get-started:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    background: linear-gradient(135deg, #ffffff, #000000); /* Reverse gradient */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 4px 8px rgba(0, 0, 0, 0.3); /* Glow effect */
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 28px; /* Smaller heading for smaller screens */
+      top: 10px; /* Reduce top margin */
+    }
+  
+    #get-started {
+      padding: 15px 30px; /* Smaller button for smaller screens */
+      font-size: 18px;
+    }
+  
+    p {
+      font-size: 16px; /* Adjust paragraph text size */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 24px; /* Further reduce font size for very small screens */
+    }
+  
+    #get-started {
+      padding: 10px 20px; /* Smaller button padding */
+      font-size: 16px;
+    }
+  
+    p {
+      font-size: 14px; /* Smaller paragraph text */
+    }
+  }
+

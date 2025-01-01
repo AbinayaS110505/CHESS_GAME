@@ -1,0 +1,147 @@
+/* For chess container on smaller screens */
+@media (max-width: 768px) {
+    .chess-container {
+        flex-direction: column; /* Stack chessboard vertically */
+    }
+
+    .board {
+        grid-template-columns: repeat(4, 1fr); /* Smaller grid for mobile */
+    }
+}
+
+
+
+
+/* Chessboard Styles */
+.chess-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('Circular\ Interface\ Hud\ Design\ Infographic\ Elements\ Stock\ Footage\ Video\ \(100%\ Royalty-free\)\ 1013109146\ _\ Shutterstock.jpeg');
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  }
+  
+  .white-square, .black-square {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .white-square {
+    background-color: #fff;
+  }
+  
+  .black-square {
+    background-color: #000;
+  }
+  
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .game-container {
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+        }
+
+        .captured-pieces {
+            width: 150px;
+            padding: 10px;
+            background-color: #eee;
+            text-align: center;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(8, 60px);
+            grid-template-rows: repeat(8, 60px);
+            gap: 1px;
+            background-color: black;
+        }
+
+        .square {
+            width: 60px;
+            height: 60px;
+        }
+
+        .white {
+            background-color: #fff;
+        }
+
+        .black {
+            background-color: #000;
+        }
+
+        h1 {
+            margin-top: 10px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .chess-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        h1 {
+            margin-bottom: 20px;
+        }
+        
+        .chessboard {
+            display: grid;
+            grid-template-columns: repeat(8, 80px);
+            grid-template-rows: repeat(8, 80px);
+            border: 2px solid #000;
+        }
+        
+        .cell {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+        }
+        
+        .cell.black {
+            background-color: #769656;
+        }
+        
+        .cell.white {
+            background-color: #eeeed2;
+        }
+        
+        .cell.valid {
+            outline: 3px solid yellow;
+        }
+        
+        .turn-indicator {
+            margin: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        

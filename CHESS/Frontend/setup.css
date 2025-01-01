@@ -1,0 +1,161 @@
+/* Setup Page */
+body {
+    margin: 0;
+    height: 100vh;
+    background-image: url('Chess Smoke Art.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .setup-container {
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Buttons for Setup Page */
+  .options button,
+  .color-selection button {
+    margin: 10px;
+    padding: 15px 25px;
+    font-size: 1.5rem;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    background-color: #444;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.setup-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.highlight {
+    background-color: #444;
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+select {
+    padding: 5px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+#start-game-btn {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+  /* Button Hover Effects */
+  .options button:hover,
+  .color-selection button:hover {
+    background-color: #666;
+    transform: scale(1.1);
+  }
+  
+  .color-selection button {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
+/* For Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .setup-container {
+        width: 80%; /* Make the container narrower for tablets */
+        padding: 15px;
+    }
+
+    .options button,
+    .color-selection button {
+        padding: 12px 20px; /* Resize buttons */
+        font-size: 1.2rem;  /* Adjust font size */
+    }
+}
+  @media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .setup-container {
+        width: 90%; /* Further reduce container size */
+        padding: 10px;
+    }
+
+    .options button,
+    .color-selection button {
+        padding: 10px 15px; /* Smaller buttons */
+        font-size: 1rem; /* Adjust font size */
+    }
+}
+
+/* For Very Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .setup-container {
+        width: 95%; /* Almost full width */
+        padding: 8px;
+    }
+
+    .options button,
+    .color-selection button {
+        padding: 8px 12px; /* Reduce button size */
+        font-size: 0.9rem; /* Smaller font size */
+    }
+}
+.setup-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #444;
+    color: white;
+    border: 1px solid #fff;
+    border-radius: 8px;
+}
+button:hover {
+    background-color: #666;
+}
+
+     
